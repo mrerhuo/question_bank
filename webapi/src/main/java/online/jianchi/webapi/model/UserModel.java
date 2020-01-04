@@ -1,10 +1,13 @@
 package online.jianchi.webapi.model;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
 /*
  *作者：二先生
  *创建时间：2020年01月04日
  *说明：用户类
 */
+@TableName(value = "t_user")//指定表名
 public class UserModel {
     private String id;
     private String name;

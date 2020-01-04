@@ -24,7 +24,14 @@ public class AccountController {
     
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test() {
+        System.out.println("sdfsdfsdf");;
         List<UserModel> userList = userMapper.selectList(null);
+        if(userList!=null){
+            for (UserModel userModel : userList) {
+                System.out.println(userModel.getName());;
+            }
+        }
+        //userList.forEach(System.out::println);
         return "你好，欢迎使用Visual Studio Code!";
     }
 }
