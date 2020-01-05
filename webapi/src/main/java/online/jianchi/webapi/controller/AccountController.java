@@ -20,6 +20,8 @@ import online.jianchi.webapi.model.UserModel;
 @RestController
 @RequestMapping("/account")
 public class AccountController {
+    
+    @Autowired
     private UserMapper userMapper;
     
     @RequestMapping(value = "/test", method = RequestMethod.GET)
