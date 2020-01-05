@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import online.jianchi.webapi.mapper.UserMapper;
-import online.jianchi.webapi.model.UserModel;
+import online.jianchi.webapi.entity.UserEntity;
 
 /*
  *作者：二先生
@@ -26,14 +26,14 @@ public class AccountController {
     
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test() {
-        System.out.println("sdfsdfsdf");;
-        List<UserModel> userList = userMapper.selectList(null);
+        List<UserEntity> userList = userMapper.selectList(null);
         if(userList!=null){
-            for (UserModel userModel : userList) {
+            for (UserEntity userModel : userList) {
                 System.out.println(userModel.getName());;
             }
         }
-        //userList.forEach(System.out::println);
+        UserEntity entity=userMapper.selectById("1");
+        System.out.println(entity.getName());
         return "你好，欢迎使用Visual Studio Code!";
     }
 }
