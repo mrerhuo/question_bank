@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  *说明：用户类
 */
 @TableName(value = "t_user")//指定表名
-public class UserEntity {
+public class SysUserEntity {
     private String id;
     private String name;
     private Integer age;

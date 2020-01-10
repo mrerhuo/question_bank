@@ -13,7 +13,7 @@ mybatis-plus:
   # MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，请将其路径配置到 configLocation 中。
   # config-location: classpath:mybatis-config.xml
   # MyBatis Mapper 所对应的 XML 文件位置，如果您在 Mapper 中有自定义方法
-  mapper-locations: classpath:mapper/mybatisplus/**/*.xml
+  mapper-locations: classpath:mybatisplus/**/*.xml
   # MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名 实体扫描，多个package用逗号或者分号分隔
   type-aliases-package:  online.jianchi.webapi.entity
   # 启动时是否检查 MyBatis XML 文件的存在，默认不检查

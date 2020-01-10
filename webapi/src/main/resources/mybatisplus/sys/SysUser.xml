@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="online.jianchi.webapi.mapper.UserMapper">
+<mapper namespace="online.jianchi.webapi.mapper.sys.UserMapper">
     <sql id="FIELDS">
         id, name, age, email
     </sql>
-    <select id="selectById" resultType="UserEntity">
+    <select id="selectByStringId" parameterType="String" resultType="SysUserEntity">
         SELECT <include refid="FIELDS" /> FROM t_user
         WHERE id  =#{id}
     </select>
