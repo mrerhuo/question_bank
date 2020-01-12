@@ -1,6 +1,8 @@
-package online.jianchi.webapi.entity;
+package online.jianchi.webapi.domain.entity.sys;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+
+import cn.hutool.core.util.IdUtil;
 
 /*
  *作者：二先生
@@ -8,7 +10,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  *说明：用户类
 */
 @TableName(value = "t_user")//指定表名
-public class SysUserEntity {
+public class SysUser {
     private String id;
     private String name;
     private Integer age;
@@ -42,7 +44,7 @@ public class SysUserEntity {
         this.name = name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId() {
+        this.id = IdUtil.randomUUID();
     }
 }

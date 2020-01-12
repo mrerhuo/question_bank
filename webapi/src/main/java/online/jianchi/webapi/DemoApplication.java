@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("online.jianchi.webapi.mapper")
+@MapperScan("online.jianchi.webapi.domain.mapper.**.*")
 public class DemoApplication {
 
 	public static void main(String[] args) {

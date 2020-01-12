@@ -1,4 +1,4 @@
-package online.jianchi.webapi.model;
+package online.jianchi.webapi.domain.vo.sys;
 
 public class UserModel {
     private Integer age;

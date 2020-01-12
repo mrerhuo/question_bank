@@ -15,7 +15,7 @@ mybatis-plus:
   # MyBatis Mapper 所对应的 XML 文件位置，如果您在 Mapper 中有自定义方法
   mapper-locations: classpath:mybatisplus/**/*.xml
   # MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名 实体扫描，多个package用逗号或者分号分隔
-  type-aliases-package:  online.jianchi.webapi.entity
+  type-aliases-package:  online.jianchi.webapi.domain.entity.**.*
   # 启动时是否检查 MyBatis XML 文件的存在，默认不检查
   check-config-location: false
   #  ExecutorType.SIMPLE：该执行器类型不做特殊的事情，为每个语句的执行创建一个新的预处理语句（PreparedStatement）

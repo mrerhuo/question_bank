@@ -1,25 +1,30 @@
-package online.jianchi.webapi.entity;
+package online.jianchi.webapi.domain.entity.sys;
 
+import cn.hutool.core.util.IdUtil;
 import online.jianchi.webapi.base.BaseEntity;
 
 /*
  * 作者：二先生
  * 日期：2020年01月08日
- * 说明：字典分组数据
+ * 说明：字典数据类
  */
-public class SysDictGroupEntity extends BaseEntity {
+public class SysDictData extends BaseEntity {
     /*
-     * 分组编号
+     * 数据字典编号
      */
-    private String groupId;
-    /*
-     * 分组名称
-     */
-    private String groupName;
+    private String dictId;
     /*
      * 分组代码
      */
     private String groupCode;
+    /*
+     * 字典文本
+     */
+    private String dictLabel;
+    /*
+     * 字典键值
+     */
+    private String dictValue;
     /*
      * 状态
      */
@@ -33,20 +38,12 @@ public class SysDictGroupEntity extends BaseEntity {
      */
     private String remark;
 
-    public String getGroupId() {
-        return groupId;
+    public String getDictId() {
+        return dictId;
     }
 
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
-    public String getGroupName() {
-        return groupName;
-    }
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setDictId() {
+        this.dictId = IdUtil.randomUUID();
     }
 
     public String getGroupCode() {
@@ -55,6 +52,22 @@ public class SysDictGroupEntity extends BaseEntity {
 
     public void setGroupCode(String groupCode) {
         this.groupCode = groupCode;
+    }
+
+    public String getDictLabel() {
+        return dictLabel;
+    }
+
+    public void setDictLabel(String dictLabel) {
+        this.dictLabel = dictLabel;
+    }
+
+    public String getDictValue() {
+        return dictValue;
+    }
+
+    public void setDictValue(String dictValue) {
+        this.dictValue = dictValue;
     }
 
     public String getStatus() {
