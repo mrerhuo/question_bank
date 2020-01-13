@@ -28,9 +28,9 @@ import online.jianchi.webapi.base.result.exception.ResultException;
  * @date 2019/10/05 16:19
  */
 @RestControllerAdvice
-public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
+public class ResultBodyAdvice implements ResponseBodyAdvice<Object> {
 
-    private static final Class<? extends Annotation> ANNOTATION_TYPE = ResponseResultBody.class;
+    private static final Class<? extends Annotation> ANNOTATION_TYPE = ResultBody.class;
 
     /** 判断类或者方法是否使用了 @ResponseResultBody */
     @Override
