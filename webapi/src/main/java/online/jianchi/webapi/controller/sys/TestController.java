@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import cn.hutool.core.convert.Convert;
 import io.swagger.annotations.Api;
 import online.jianchi.webapi.base.result.Result;
-import online.jianchi.webapi.base.result.exception.ResultStatus;
 import online.jianchi.webapi.domain.entity.sys.SysUser;
 import online.jianchi.webapi.domain.mapper.sys.UserMapper;
 import online.jianchi.webapi.domain.vo.sys.UserModel;
