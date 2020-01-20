@@ -4,10 +4,9 @@ import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-/*
- * 作者：二先生
- * 日期：2020年01月08日
- * 说明：基础实体类
+/*** 基础实体类
+ * @author 二先生
+ * @date：2020年01月20日
  */
 public class BaseEntity {
     /** 创建者 */

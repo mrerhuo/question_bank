@@ -24,8 +24,8 @@ import online.jianchi.webapi.base.result.exception.ResultException;
  * <p>
  * 对异常请求进行统一的处理
  *
- * @author galaxy
- * @date 2019/10/05 16:19
+ * @author 二先生
+ * @date 2020年01月20日
  */
 @RestControllerAdvice
 public class ResultBodyAdvice implements ResponseBodyAdvice<Object> {

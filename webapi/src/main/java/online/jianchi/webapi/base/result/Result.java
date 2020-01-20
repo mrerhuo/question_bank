@@ -6,8 +6,8 @@ import online.jianchi.webapi.base.result.exception.ResultStatus;
  * 后端返回给前端的json格式 todo 返回格式参考
  * org.springframework.boot.web.servlet.error.DefaultErrorAttributes
  *
- * @author galaxy
- * @date 2019/10/05 16:19
+ * @author 二先生
+ * @date 2020年01月20日
  */
 public class Result<T> {
     /** 业务错误码 */

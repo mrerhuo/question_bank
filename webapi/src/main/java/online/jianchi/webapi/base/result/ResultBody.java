@@ -11,8 +11,8 @@ import java.lang.annotation.Target;
 /**
  * 使用这个注解就可以返回统一的json格式,  用于类和方法上
  *
- * @author galaxy
- * @date 2019/10/05 16:19
+ * @author 二先生
+ * @date 2020年01月20日
  */
 
 @Retention(RetentionPolicy.RUNTIME)

@@ -1,10 +1,9 @@
 package online.jianchi.webapi.base.result.exception;
 
-/**
+/***
  * 业务异常类
- *
- * @author galaxy
- * @date 2019/10/05 16:19
+ * 
+ * @author 二先生 @date：2020年01月20日
  */
 public class ResultException extends Exception {
 
@@ -18,7 +17,7 @@ public class ResultException extends Exception {
         this(ResultStatus.INTERNAL_SERVER_ERROR);
     }
 
-    public ResultException(ResultStatus resultStatus) {
+    public ResultException(final ResultStatus resultStatus) {
         super(resultStatus.getMessage());
         this.resultStatus = resultStatus;
     }
@@ -27,7 +26,7 @@ public class ResultException extends Exception {
         return resultStatus;
     }
 
-    public void setResultStatus(ResultStatus resultStatus) {
+    public void setResultStatus(final ResultStatus resultStatus) {
         this.resultStatus = resultStatus;
     }
 }
