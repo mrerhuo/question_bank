@@ -60,7 +60,6 @@ public class ResultBodyAdvice implements ResponseBodyAdvice<Object> {
         if (ex instanceof ResultException) {
             return this.handleResultException((ResultException) ex, headers, request);
         }
-        // TODO: 2019/10/05 galaxy 这里可以自定义其他的异常拦截
         return this.handleException(ex, headers, request);
     }
 

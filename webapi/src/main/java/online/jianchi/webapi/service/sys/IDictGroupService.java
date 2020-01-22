@@ -2,8 +2,9 @@ package online.jianchi.webapi.service.sys;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import online.jianchi.webapi.domain.entity.sys.SysDictGroup;
-import online.jianchi.webapi.domain.vo.sys.dict.DictGroupQuery;
 
 /***
  * 字典分组接口
@@ -17,7 +18,7 @@ public interface IDictGroupService {
      * @param query 查询条件model
      * @return 返回查询数据
      */
-    public List<SysDictGroup> getPages(DictGroupQuery query);
+    public Page<SysDictGroup> getPages(Page<SysDictGroup> page,SysDictGroup query);
 
     /**
      * 获取所有数据
@@ -40,7 +41,7 @@ public interface IDictGroupService {
      * @param model 新增实体信息
      * @return 返回主键，异常返回空字符串
      */
-    public String add(SysDictGroup model);
+    public int add(SysDictGroup model);
 
     /**
      * 编辑信息
@@ -48,7 +49,7 @@ public interface IDictGroupService {
      * @param model 编辑实体信息
      * @return 返回主键，异常返回空字符串
      */
-    public String edit(SysDictGroup model);
+    public int edit(SysDictGroup model);
 
     /**
      * 删除指定Id信息
@@ -56,7 +57,7 @@ public interface IDictGroupService {
      * @param id 需删除的主键值
      * @return 返回主键，异常返回空字符串
      */
-    public String deleteById(String id);
+    public int deleteById(String id);
 
     /**
      * 批量删除指定Id信息
@@ -64,5 +65,5 @@ public interface IDictGroupService {
      * @param ids 需删除的主键值字符串集合
      * @return 返回主键，异常返回空字符串
      */
-    public String deleteByIds(String ids);
+    public int deleteByIds(String ids);
 }

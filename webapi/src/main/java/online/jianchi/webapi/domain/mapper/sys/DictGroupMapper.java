@@ -10,4 +10,5 @@ import online.jianchi.webapi.domain.entity.sys.SysDictGroup;
  * @author 二先生 @date：2020年01月22日
  */
 public interface DictGroupMapper extends BaseMapper<SysDictGroup> {
+
 }

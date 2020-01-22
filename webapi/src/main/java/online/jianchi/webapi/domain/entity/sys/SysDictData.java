@@ -1,6 +1,9 @@
 package online.jianchi.webapi.domain.entity.sys;
 
-import cn.hutool.core.util.IdUtil;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import online.jianchi.webapi.base.BaseEntity;
 
 /*
@@ -8,10 +11,12 @@ import online.jianchi.webapi.base.BaseEntity;
  * 日期：2020年01月08日
  * 说明：字典数据类
  */
+@TableName("sys_dict_data")
 public class SysDictData extends BaseEntity {
     /*
      * 数据字典编号
      */
+    @TableId(type = IdType.ASSIGN_ID)
     private String dictId;
     /*
      * 分组代码
@@ -42,8 +47,8 @@ public class SysDictData extends BaseEntity {
         return dictId;
     }
 
-    public void setDictId() {
-        this.dictId = IdUtil.randomUUID();
+    public void setDictId(String dictId) {
+        this.dictId = dictId;
     }
 
     public String getGroupCode() {
