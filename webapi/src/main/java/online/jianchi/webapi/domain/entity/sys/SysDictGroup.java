@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import online.jianchi.webapi.base.BaseEntity;
-import online.jianchi.webapi.config.IdGenerator;
 
 /*
  * 作者：二先生

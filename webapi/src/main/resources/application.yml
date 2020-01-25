@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver  #数据库驱动
-    url: jdbc:postgresql://localhost:5432/TestDB #连接地址
+    url: jdbc:postgresql://localhost:5432/online.jianchi.qbdb #连接地址
     username: postgres #账号
     password: postgres #密码
 mybatis-plus:
