@@ -24,8 +24,11 @@ class App extends VuexModule implements IAppState {
 
     @Mutation
     private TOGGLE_SIDEBAR(withoutAnimation: boolean) {
+       
         this.menu.opened = !this.menu.opened
+        console.log(this.menu.opened);
         this.menu.withoutAnimation = withoutAnimation
+        
     }
     @Mutation
     private CLOSE_SIDEBAR(withoutAnimation: boolean) {

@@ -15,7 +15,7 @@ export default {
   watch: {}
 };
 </script>
-<style scoped lang="less">
+<style scoped lang="scss">
 .divv{
     background-color: rebeccapurple;
 }

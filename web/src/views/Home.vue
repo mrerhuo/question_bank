@@ -29,7 +29,7 @@ export default {
   watch: {}
 };
 </script>
-<style scoped lang="less">
+<style scoped lang="scss">
 .home_bg{
   background-color: cornflowerblue;
 }

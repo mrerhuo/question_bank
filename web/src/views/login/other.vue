@@ -22,7 +22,7 @@ export default class OtherLogin extends Vue{
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .other-login{
     font-size: 42px;
 }

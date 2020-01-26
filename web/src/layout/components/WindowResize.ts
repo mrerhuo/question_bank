@@ -44,8 +44,6 @@ export default class WindowResize extends Vue {
             if (isMobile) {
                 AppModule.CloseSideBar(true)
             }
-            console.log(AppModule.device);
-            console.log(AppModule.menu);
         }
     }
     //判断是否是移动端
