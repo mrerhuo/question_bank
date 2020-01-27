@@ -1,53 +1,38 @@
 <template>
   <div class="menu-layout">
-    <el-aside
-    class="menu-layout"
-    v-show="!menu.mobile" :width="menu.isOpen?'65px':'180px'">
-      <menus v-model="menu.isOpen" />
-    </el-aside>
-    <el-drawer
-      size="179px"
+    <side-menu v-show="!menu.mobile&&!menu.isOpen" />
+    <min-menu v-show="!menu.mobile&&menu.isOpen" />
+    <Drawer
       title="菜单"
-      :show-close="false"
-      :append-to-body="true"
-      :visible.sync="menu.mobile&&!menu.isOpen"
-      :before-close="drawerClose"
-      direction="ltr"
+      placement="left"
+      @on-close="drawerClose"
+      :closable="false"
+      :value="menu.mobile&&!menu.isOpen"
     >
-    <div class="menu-layout">
-       <menus />
-    </div>
-    </el-drawer>
+      <side-menu />
+    </Drawer>
   </div>
 </template>
 <script lang="ts">
 import { Component, Watch, Prop, Vue } from "vue-property-decorator";
 import { AppModule, DeviceType } from "@/store/modules/app";
-import Menus from "./menu.vue";
-
+import SideMenu from "./SideMenu.vue";
+import MinMenu from "./MinMenu.vue";
 @Component({
-  components: { Menus }
+  components: { SideMenu, MinMenu }
 })
-export default class MenuLayout extends Vue {
+export default class MenuContainer extends Vue {
   get menu() {
     return {
       isOpen: !AppModule.menu.opened,
       mobile: AppModule.device === DeviceType.Mobile
     };
   }
-  drawerClose(done) {
+
+  drawerClose() {
     AppModule.ToggleSideBar(false);
   }
 }
 </script>
-<style scoped lang="scss">
-.menu-layout {
-  height: 100%;
-  transition: margin-left .28s;
-  overflow-x: hidden; /*x轴禁止滚动*/
-   overflow-y: auto;
-}
-.ccc {
-  z-index: "2006";
-}
+<style scoped lang="less">
 </style>

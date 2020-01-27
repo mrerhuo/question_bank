@@ -1,47 +1,43 @@
 <template>
-  <el-container class="root_container">
-    <el-header class="layout-head">
-      <div>
-      <logo style="float:left"/>
-        <hamburger style="float:left" :is-active="menu.opened" @toggleClick="toggleMenu"></hamburger>
-        <screen-full style="float:left"/>
-      </div>
-    </el-header>
-    <el-container class="layout-main">
-      <menu-layout class="layout-menu" width="180px" />
-      <el-main>
+  <Layout class="root_container">
+    <Header>
+      <head-bar />
+    </Header>
+    <Layout>
+      <Sider v-show="!menu.mobile" hide-trigger collapsible :collapsed-width="56" :value="menu.isOpen">
+        <menu-container />
+      </Sider>
+      <Content>
         <router-view />
-      </el-main>
-    </el-container>
-    <el-footer class="layout-footer">Footer</el-footer>
-  </el-container>
+      </Content>
+    </Layout>
+    <Footer class="layout_footer">Footer</Footer>
+  </Layout>
 </template>
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { AppModule } from "@/store/modules/app";
+import { AppModule, DeviceType } from "@/store/modules/app";
 import WindowResize from "./components/WindowResize";
-import menuLayout from "./components/menu/index.vue";
-import { Logo,Hamburger, ScreenFull } from "./components/head/";
+import MenuContainer from "./components/menu/index.vue";
+import HeadBar from "./components/head/index.vue";
 @Component({
-  components: { menuLayout,Logo, Hamburger, ScreenFull }
+  components: { MenuContainer,HeadBar }
 })
-export default class Layout extends WindowResize {
-  get menu() {
-    return AppModule.menu;
-  }
-  toggleMenu() {
-    AppModule.ToggleSideBar(false);
-  }
+export default class DesignLayout extends WindowResize {
+  // Sider: any;
+  // collapsedSider() {
+  //   (this.$refs.side1 as any).toggleCollapse();
+  // }
 }
 </script>
-<style scoped lang="scss">
-.layout-head {
-  background-color: #545c64;
+<style scoped lang="less">
+.layout_head {
+  background-color: rgb(48, 65, 86);
 }
-.layout-footer {
-  background-color: red;
+.layout_footer {
+  background-color: rgb(116, 41, 41);
 }
-.layout-main {
+.layout_main {
   height: 100%;
   background-color: yellow;
 }

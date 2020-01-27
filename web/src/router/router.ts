@@ -46,23 +46,22 @@ export const homeRouter: Router = {
     }]
 };
 
-export const sysRouter: Router = {
-    path: '/sys',
-    name: 'sys',
-    meta: {
-        title: '布局'
-    },
-    component: Layout,
-    children: [{
-        path: 'dict',
-        name: 'dict',
-        meta: { title: '字典管理' },
-        component: DictGroupList
-    }]
-};
+// export const sysRouter: Router = {
+//     path: '/sys',
+//     name: 'sys',
+//     meta: {
+//         title: '布局'
+//     },
+//     component: Layout,
+//     children: [{
+//         path: 'dict',
+//         name: 'dict',
+//         meta: { title: '字典管理' },
+//         component: DictGroupList
+//     }]
+// };sysRouter
 
 export const routers = [
     loginRouter,
-    homeRouter,
-    sysRouter
+    homeRouter
 ];

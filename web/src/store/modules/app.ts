@@ -12,6 +12,7 @@ export interface IAppState {
         opened: boolean
         withoutAnimation: boolean
     }
+    size: string
 }
 @Module({ dynamic: true, store, name: 'app' })
 class App extends VuexModule implements IAppState {
@@ -19,7 +20,7 @@ class App extends VuexModule implements IAppState {
         opened: true,
         withoutAnimation: false
     }
-
+    public size = 'medium'
     public device = DeviceType.Desktop
 
     @Mutation
@@ -40,7 +41,10 @@ class App extends VuexModule implements IAppState {
     private TOGGLE_DEVICE(device: DeviceType) {
         this.device = device
     }
-
+    @Mutation
+    private SET_SIZE(size: string) {
+      this.size = size
+    }
     @Action
     public ToggleSideBar(withoutAnimation: boolean) {
       this.TOGGLE_SIDEBAR(withoutAnimation)
@@ -54,6 +58,10 @@ class App extends VuexModule implements IAppState {
     @Action
     public ToggleDevice(device: DeviceType) {
       this.TOGGLE_DEVICE(device)
+    }
+    @Action
+    public SetSize(size: string) {
+      this.SET_SIZE(size)
     }
   
 }

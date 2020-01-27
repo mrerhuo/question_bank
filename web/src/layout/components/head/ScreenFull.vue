@@ -1,8 +1,10 @@
 <template>
-  <div id="screenfull" @click="click">
-    <i v-show="!isFullscreen" class="iconfont icon-quanping head_icon" />
-    <i v-show="isFullscreen" class="iconfont icon-jichucaozuoicon-tuichuquanping head_icon" />
-  </div>
+  <Tooltip content="全屏" placement="bottom">
+    <div id="screenfull" @click="click">
+      <i v-show="!isFullscreen" class="iconfont icon-quanping head_icon" />
+      <i v-show="isFullscreen" class="iconfont icon-jichucaozuoicon-tuichuquanping head_icon" />
+    </div>
+  </Tooltip>
 </template>
 
 <script lang="ts">
@@ -35,10 +37,7 @@ export default class ScreenFull extends Vue {
 
   private click() {
     if (!sf.isEnabled) {
-      this.$message({
-        message: "you browser can not work",
-        type: "warning"
-      });
+      this.$Message.error("浏览器不兼容！");
       return false;
     }
     sf.toggle();

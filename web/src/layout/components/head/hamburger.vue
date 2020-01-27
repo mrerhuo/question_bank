@@ -1,7 +1,7 @@
 <template>
   <div @click="toggleClick">
-    <i v-show="!isActive" class="iconfont icon-shousuo head_icon" />
-    <i v-show="isActive" class="iconfont icon-close head_icon" />
+    <i v-show="isActive" class="iconfont icon-zhedie head_icon" />
+    <i v-show="!isActive" class="iconfont icon-zhedie1 head_icon" />
   </div>
 </template>
 
@@ -18,5 +18,5 @@ export default class Hamburger extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 </style>

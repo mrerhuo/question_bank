@@ -34,13 +34,6 @@
       "unicode_decimal": 58902
     },
     {
-      "icon_id": "780241",
-      "name": "大小",
-      "font_class": "daxiao",
-      "unicode": "e8b6",
-      "unicode_decimal": 59574
-    },
-    {
       "icon_id": "821446",
       "name": "首页",
       "font_class": "shouye",
@@ -90,13 +83,6 @@
       "unicode_decimal": 58625
     },
     {
-      "icon_id": "3866358",
-      "name": "收缩",
-      "font_class": "shousuo",
-      "unicode": "e602",
-      "unicode_decimal": 58882
-    },
-    {
       "icon_id": "6862940",
       "name": "基础操作icon-退出全屏",
       "font_class": "jichucaozuoicon-tuichuquanping",
@@ -132,6 +118,20 @@
       "unicode_decimal": 58909
     },
     {
+      "icon_id": "9338646",
+      "name": "字体大小-大",
+      "font_class": "zitidaxiao-da",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "9757345",
+      "name": "折叠",
+      "font_class": "zhedie",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
       "icon_id": "11177567",
       "name": "设置",
       "font_class": "ziyuan",
@@ -146,18 +146,18 @@
       "unicode_decimal": 58883
     },
     {
-      "icon_id": "11923984",
-      "name": "展开",
-      "font_class": "close",
-      "unicode": "e50b",
-      "unicode_decimal": 58635
-    },
-    {
       "icon_id": "12493470",
       "name": "menu",
       "font_class": "menu",
       "unicode": "e685",
       "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "12872026",
+      "name": "折叠",
+      "font_class": "zhedie1",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
     }
   ]
 }

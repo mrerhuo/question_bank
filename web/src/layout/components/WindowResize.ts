@@ -9,14 +9,19 @@ export default class WindowResize extends Vue {
     get device() {
         return AppModule.device
     }
+
     get menu() {
-        return AppModule.menu
-    }
+        return {
+          isOpen: !AppModule.menu.opened,
+          mobile: AppModule.device === DeviceType.Mobile
+        };
+      }
+
     deviceType = false
 
     @Watch('$route')
     private onRouteChange() {
-        if (this.device === DeviceType.Mobile && this.menu.opened) {
+        if (this.device === DeviceType.Mobile && this.menu.isOpen) {
             AppModule.CloseSideBar(false)
         }
     }
