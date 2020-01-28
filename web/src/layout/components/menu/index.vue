@@ -1,7 +1,7 @@
 <template>
   <div class="menu-layout">
-    <side-menu v-show="!menu.mobile&&!menu.isOpen" />
-    <min-menu v-show="!menu.mobile&&menu.isOpen" />
+    <side-menu :menu-data="menu.menuList" v-show="!menu.mobile&&!menu.isOpen" />
+    <min-menu :menu-data="menu.menuList" v-show="!menu.mobile&&menu.isOpen" />
     <Drawer
       title="菜单"
       placement="left"
@@ -9,7 +9,7 @@
       :closable="false"
       :value="menu.mobile&&!menu.isOpen"
     >
-      <side-menu />
+      <side-menu :menu-data="menu.menuList"/>
     </Drawer>
   </div>
 </template>
@@ -25,7 +25,8 @@ export default class MenuContainer extends Vue {
   get menu() {
     return {
       isOpen: !AppModule.menu.opened,
-      mobile: AppModule.device === DeviceType.Mobile
+      mobile: AppModule.device === DeviceType.Mobile,
+      menuList:AppModule.menuList
     };
   }
 
