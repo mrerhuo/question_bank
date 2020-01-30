@@ -19,12 +19,6 @@ export default class WindowResize extends Vue {
 
     deviceType = false
 
-    @Watch('$route')
-    private onRouteChange() {
-        if (this.device === DeviceType.Mobile && this.menu.isOpen) {
-            AppModule.CloseSideBar(false)
-        }
-    }
 
     //计算变化
     mounted() {
@@ -53,7 +47,8 @@ export default class WindowResize extends Vue {
     }
     //判断是否是移动端
     private isMobile() {
-        const rect = document.body.getBoundingClientRect()
+        const rect = document.body.getBoundingClientRect();
+        Vue.prototype.$height=rect.height;
         return rect.width - 1 < ScreenWidth
     }
 }

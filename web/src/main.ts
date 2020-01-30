@@ -4,7 +4,7 @@ import ViewUI from 'view-design'
 import router from './router'
 import store from './store'
 import '@/style/theme.less';
-import '@/style/site.css'
+// import '@/style/site.less'
 import '@/style/iconfonts/iconfont.css'
 
 Vue.use(ViewUI)

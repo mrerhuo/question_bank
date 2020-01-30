@@ -1,4 +1,5 @@
 import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-decorators'
+import { RouteRecord, Route } from 'vue-router'
 import store from '@/store'
 
 export enum DeviceType {
@@ -21,9 +22,9 @@ export interface IAppState {
     withoutAnimation: boolean
   },
   menuList: Array<MenuItem>;
-  size: string
+  size: string,
+  BreadcrumbList:Array<RouteRecord>
 }
-
 
 @Module({ dynamic: true, store, name: 'app' })
 class App extends VuexModule implements IAppState {
@@ -36,9 +37,9 @@ class App extends VuexModule implements IAppState {
   public menuList = [
     {
       id: '1', title: "父菜单1", url: "", icon: 'iconfont icon-zhedie1', children: [
-        { id: '2', title: "子菜单1-1", url: "sys/dict/list", icon: 'iconfont icon-zhedie1', children: [] },
-        { id: '3', title: "子菜单1-2", url: "sys/role/list", icon: 'iconfont icon-zhedie1', children: [] },
-        { id: '4', title: "子菜单1-3", url: "sys/menu/list", icon: 'iconfont icon-zhedie1', children: [] }
+        { id: '2', title: "子菜单1-1", url: "/sys/dict", icon: 'iconfont icon-zhedie1', children: [] },
+        { id: '3', title: "子菜单1-2", url: "/sys/role", icon: 'iconfont icon-zhedie1', children: [] },
+        { id: '4', title: "子菜单1-3", url: "/sys/menu", icon: 'iconfont icon-zhedie1', children: [] }
       ]
     },
     {
@@ -62,6 +63,7 @@ class App extends VuexModule implements IAppState {
       id: '11', title: "菜单4", url: "/sys/dict", icon: 'iconfont icon-zhedie1', children: []
     }
   ];
+  public BreadcrumbList=new Array<RouteRecord>();
   //Mutation 更新State
   @Mutation
   private GET_MENU() {
@@ -86,6 +88,10 @@ class App extends VuexModule implements IAppState {
   private SET_SIZE(size: string) {
     this.size = size
   }
+  @Mutation
+  private SET_BREADCRUMB(list:Array<RouteRecord>){
+    this.BreadcrumbList =list;
+  }
   //action 处理请求
   @Action
   public getMenu() {
@@ -109,7 +115,10 @@ class App extends VuexModule implements IAppState {
   public SetSize(size: string) {
     this.SET_SIZE(size)
   }
-
+  @Action
+  public setBreadcrumb(list:Array<RouteRecord>){
+    this.SET_BREADCRUMB(list)
+  }
 }
 
 export const AppModule = getModule(App)

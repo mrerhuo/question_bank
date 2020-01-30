@@ -29,11 +29,6 @@ export default class HeadBar extends Vue {
   toggleMenu() {
     AppModule.ToggleSideBar(false);
   }
-  //   <logo style="float:left" v-show="isDeskTop" />
-  //
-  //
-  //
-  //
 }
 </script>
 

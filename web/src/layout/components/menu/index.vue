@@ -3,6 +3,7 @@
     <side-menu :menu-data="menu.menuList" v-show="!menu.mobile&&!menu.isOpen" />
     <min-menu :menu-data="menu.menuList" v-show="!menu.mobile&&menu.isOpen" />
     <Drawer
+      class="cus_drawer"
       title="菜单"
       placement="left"
       @on-close="drawerClose"

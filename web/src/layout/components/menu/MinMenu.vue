@@ -18,7 +18,9 @@
                   <DropdownItem
                     v-for="lastItem in secItem.children"
                     :key="lastItem.id"
-                  >{{lastItem.title}}</DropdownItem>
+                  >
+                  <router-link :to="lastItem.url" class="min_item_link">{{lastItem.title}}</router-link>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </template>
@@ -51,8 +53,14 @@ export default class MinMenu extends Vue {
 .min_menu {
   margin: 0 10px 0 10px;
 }
+.min_item_link{
+  height: 34px;
+}
 .min_menu_size {
   font-size: 36px;
   color: #ffffff;
+}
+.min_tsname{
+  margin-left: 10px;
 }
 </style>
