@@ -7,7 +7,9 @@
         </a>
         <DropdownMenu slot="list">
           <template v-for="secItem in item.children">
-            <DropdownItem v-if="secItem.children.length==0" :key="secItem.id">{{secItem.title}}</DropdownItem>
+            <DropdownItem v-if="secItem.children.length==0" :key="secItem.id">
+            <router-link :to="secItem.url" class="min_item_link">{{secItem.title}}</router-link>
+            </DropdownItem>
             <template v-if="secItem.children.length!=0">
               <Dropdown placement="right-start" :key="secItem.id">
                 <DropdownItem>
@@ -15,11 +17,8 @@
                   <Icon type="ios-arrow-forward"></Icon>
                 </DropdownItem>
                 <DropdownMenu slot="list">
-                  <DropdownItem
-                    v-for="lastItem in secItem.children"
-                    :key="lastItem.id"
-                  >
-                  <router-link :to="lastItem.url" class="min_item_link">{{lastItem.title}}</router-link>
+                  <DropdownItem v-for="lastItem in secItem.children" :key="lastItem.id">
+                    <router-link :to="lastItem.url" class="min_item_link">{{lastItem.title}}</router-link>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
@@ -46,21 +45,20 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class MinMenu extends Vue {
   @Prop({ type: Array, default: [] }) menuData!: any;
-  // <DropdownItem>{{menuData}}</DropdownItem>
 }
 </script>
 <style scoped lang="less">
 .min_menu {
   margin: 0 10px 0 10px;
 }
-.min_item_link{
+.min_item_link {
   height: 34px;
 }
 .min_menu_size {
   font-size: 36px;
   color: #ffffff;
 }
-.min_tsname{
+.min_tsname {
   margin-left: 10px;
 }
 </style>
