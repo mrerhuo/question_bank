@@ -53,14 +53,6 @@
 import { Component, Vue, Inject, Prop, Watch } from "vue-property-decorator";
 import EditView from "./edit.vue";
 import DetailView from "./detail.vue";
-
-import {
-  IGroupModels,
-  EditModel,
-  QueryModel,
-  DataList
-} from "@/store/model/sys/dict";
-
 import { DictGroup } from "@/store/modules/sys/DictGroup";
 
 @Component({ components: { EditView, DetailView } })
