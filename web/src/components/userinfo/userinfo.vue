@@ -14,10 +14,10 @@
         </Row>
         <Row>
           <Col span="12">
-            <Form-item label="行政区划" prop="areaCode">{{model.areaName}}</Form-item>
+            <Form-item label="行政区" prop="areaCode">{{model.areaName}}</Form-item>
           </Col>
           <Col span="12">
-            <Form-item label="最后登录时间" prop="areaCode">{{model.lastLoginTime|moment}}</Form-item>
+            <Form-item label="最后登录时间" prop="areaCode">{{model.lastLoginTime}}</Form-item>
           </Col>
         </Row>
         <Form-item label="姓名" prop="userName">

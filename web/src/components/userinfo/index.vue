@@ -1,7 +1,7 @@
 <template>
   <div class="root_container" :style="{ 'height': pageHeight + 'px'}">
     <Row class="user_info">
-      <Col span="6">
+      <Col :xl="6" :lg="9" :md="12" :sm="10" :xs="24"  class="user_info_left">
         <Card shadow>
           <p slot="title">个人中心</p>
           <div class="user_info_head">
@@ -11,10 +11,20 @@
             />
             <h1>XXX</h1>
           </div>
+          <Divider />
+          <CellGroup>
+            <Cell title="账号" extra="account" />
+            <Cell title="部门" extra="deptName" />
+            <Cell title="行政区" extra="云南省昆明市五华区XXX路" />
+            <Cell title="最后登录事件" extra="2020-12-12 53:54:32" />
+            <Cell title="姓名" extra="某先生" />
+            <Cell title="手机号" extra="13518745952" />
+            <Cell title="邮件" extra="silence_ailong@qq.com" />
+          </CellGroup>
         </Card>
       </Col>
-      <Col span="17" class="user_info_right">
-        <Card shadow>
+      <Col :xl="18" :lg="15" :md="12" :sm="14" :xs="24" class="user_info_right" >
+        <Card shadow >
           <Tabs type="card">
             <TabPane label="信息维护">
               <user-info />
@@ -58,7 +68,10 @@ export default class UserIndex extends Vue {
 .user_info_head {
   text-align: center;
 }
+.user_info_left {
+  padding: 10px 10px 10px 10px;
+}
 .user_info_right {
-  margin-left: 10px;
+  padding: 10px 10px 10px 10px;
 }
 </style>

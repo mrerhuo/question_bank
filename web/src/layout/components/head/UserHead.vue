@@ -11,8 +11,9 @@
         <DropdownItem name="message">
           <router-link to="/sys/userinfo" class="min_item_link">个人中心</router-link>
         </DropdownItem>
-        <DropdownItem name="message">首页</DropdownItem>
-        <DropdownItem name="message">设置</DropdownItem>
+        <DropdownItem name="message">
+         <router-link to="/home" class="min_item_link">首页</router-link>
+        </DropdownItem>
         <DropdownItem divided name="logout">退出登录</DropdownItem>
       </DropdownMenu>
     </Dropdown>
