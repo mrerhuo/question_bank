@@ -32,7 +32,7 @@ class App extends VuexModule implements IAppState {
     opened: true,
     withoutAnimation: false
   }
-  public size = 'medium'
+  public size = 'default'
   public device = DeviceType.Desktop
   public menuList = [
     {

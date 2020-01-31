@@ -6,8 +6,12 @@ import store from './store'
 import '@/style/theme.less';
 // import '@/style/site.less'
 import '@/style/iconfonts/iconfont.css'
+import { AppModule } from '@/store/modules/app'
 
-Vue.use(ViewUI)
+Vue.use(ViewUI,{
+  size:AppModule.size
+})
+
 Vue.config.productionTip = false
 
 new Vue({

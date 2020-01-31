@@ -1,19 +1,17 @@
 <template>
-  <Tooltip content="布局大小" placement="bottom">
-    <Dropdown trigger="click">
-      <a href="javascript:void(0)">
-        <i class="iconfont icon-zitidaxiao-da head_icon"></i>
-        <Icon :size="18" style="color:#ffffff;" type="md-arrow-dropdown"></Icon>
-      </a>
-      <DropdownItem
-        slot="list"
-        v-for="item of sizeOptions"
-        :key="item.value"
-        :disabled="size===item.value"
-        :command="item.value"
-      >{{item.label }}</DropdownItem>
-    </Dropdown>
-  </Tooltip>
+  <Dropdown trigger="click"  @on-click="handleSetSize">
+    <a href="javascript:void(0)">
+      <i class="iconfont icon-zitidaxiao-da head_icon"></i>
+      <Icon :size="18" style="color:#ffffff;" type="md-arrow-dropdown"></Icon>
+    </a>
+    <DropdownItem
+      slot="list"
+      v-for="item of sizeOptions"
+      :key="item.value"
+      :disabled="size===item.value"
+      :name="item.value"
+    >{{item.label }}</DropdownItem>
+  </Dropdown>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
@@ -24,14 +22,12 @@ export default class SetFontSize extends Vue {
     return AppModule.size;
   }
   private sizeOptions = [
+    { label: "Large", value: "large" },
     { label: "Default", value: "default" },
-    { label: "Medium", value: "medium" },
-    { label: "Small", value: "small" },
-    { label: "Mini", value: "mini" }
+    { label: "Small", value: "small" }
   ];
-  private handleSetSize(size: string) {
-    (this as any).$ELEMENT.size = size;
-    AppModule.SetSize(size);
+  handleSetSize(name: string) {
+    AppModule.SetSize(name);
     this.refreshView();
     this.$Message.success("切换成功");
   }
@@ -39,9 +35,7 @@ export default class SetFontSize extends Vue {
   private refreshView() {
     const { fullPath } = this.$route;
     this.$nextTick(() => {
-      this.$router.replace({
-        path: fullPath
-      });
+      this.$router.replace({ path:"/redirect"+fullPath});
     });
   }
 }

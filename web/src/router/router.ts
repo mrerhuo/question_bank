@@ -6,7 +6,8 @@ declare global {
     }
     interface Router {
         path: string;
-        name: string;
+        name?: string;
+        alias?: string,
         permission?: string;
         meta?: RouterMeta;
         component: any;
@@ -17,6 +18,7 @@ declare global {
     }
     var System: System
 }
+import Redirect from '@/layout/redirect/index.vue'
 import Login from '@/views/login/index.vue'
 import Layout from '@/layout/index.vue';
 import Home from '@/views/home.vue'
@@ -24,6 +26,7 @@ import Home from '@/views/home.vue'
 import MenuList from '@/views/sys/menu/list.vue';
 import RoleList from '@/views/sys/role/list.vue';
 import DictGroupList from '@/views/sys/dictgroup/list.vue';
+import UserInfo from '@/components/userinfo/index.vue';
 
 export const loginRouter: Router = {
     path: '',
@@ -33,7 +36,14 @@ export const loginRouter: Router = {
     },
     component: Login
 };
-
+export const redirectRouter: Router = {
+    path: '/redirect/:path*',
+    component: Redirect,
+    // children: [{
+    //     path: '/redirect/:path*',
+    //     component: Redirect
+    // }]
+};
 export const homeRouter: Router = {
     path: '',
     name: 'layout',
@@ -61,6 +71,7 @@ export const sysRouter: Router = {
     children: [{
         path: 'menu',
         name: 'menu',
+        
         meta: { isNav: true, title: '菜单管理', icon: 'iconfont icon-zhedie1' },
         component: MenuList
     },
@@ -76,10 +87,18 @@ export const sysRouter: Router = {
         meta: { isNav: true, title: '字典管理', icon: 'iconfont icon-zhedie1' },
         component: DictGroupList
     }
+    ,
+    {
+        path: 'userinfo',
+        name: 'userinfo',
+        meta: { isNav: true, title: '个人中心', icon: 'iconfont icon-user' },
+        component: UserInfo
+    }
 ]
 }; sysRouter
 
 export const routers = [
+    redirectRouter,
     loginRouter,
     homeRouter,
     sysRouter

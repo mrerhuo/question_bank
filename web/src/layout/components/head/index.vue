@@ -2,9 +2,9 @@
   <div class="testbg">
     <logo style="float:left" v-show="isDeskTop" />
     <hamburger style="float:left" :is-active="menu.opened" @toggleClick="toggleMenu"></hamburger>
-    <user-head style="float:right" />
-    <set-font-size style="float:right" />
-    <screen-full style="float:right" />
+    <user-head style="float:right;" />
+    
+    <screen-full style="float:right;margin-right: 10px;" />
   </div>
 </template>
 
@@ -35,5 +35,6 @@ export default class HeadBar extends Vue {
 <style lang="less" scoped>
 .testbg {
   background-color: cadetblue;
+  
 }
 </style>

@@ -38,14 +38,9 @@ export default class EditView extends Vue {
   get modalTitle() {
     return this.keyId === 0 ? "新增信息" : "编辑信息";
   }
-  handleClose() {
-    if (!this.value) {
-      this.$emit("input", false);
-    }
-  }
   visibleChange(value: boolean) {
     if (!value) {
-      this.$emit("input", value);
+      this.cancel();
     } else {
       this.model.groupId = this.keyId;
       this.model=DictGroup.editModel;

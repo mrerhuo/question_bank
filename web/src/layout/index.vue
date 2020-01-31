@@ -1,5 +1,5 @@
 <template>
-  <Layout class="root_container">
+  <Layout class="layout_container">
     <Header class="layout_head">
       <layout-head />
     </Header>

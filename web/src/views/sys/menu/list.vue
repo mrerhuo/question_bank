@@ -46,7 +46,7 @@ export default class DictGroupPage extends Vue {
     await DictGroup.getPges(this.query);
   }
   value1 = "";
-  pageHeight = Vue.prototype.$height - 295;//查询条件一行：263 查询条件2行295
+  pageHeight = Vue.prototype.$height - 269;//空白页为：133查询条件一行：237 查询条件2行269
   columns = [
     {
       type: "index",

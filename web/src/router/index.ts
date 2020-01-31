@@ -19,13 +19,25 @@ Vue.use(VueRouter)
 //   }
 // ]
 
-const router = new VueRouter({
+const newRouter = new VueRouter({
   mode: 'history',
   scrollBehavior: (to, from, savedPosition) => {
-    return { x: 0, y: 0 }
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
   },
   routes: routers
 })
+
+const router = newRouter;
+
+
+export function resetRouter() {
+  const newRouter = router;
+  (router as any).matcher = (newRouter as any).matcher // reset router
+}
 
 export default router
 //路由开始方法
