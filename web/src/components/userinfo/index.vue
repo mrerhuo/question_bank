@@ -1,5 +1,5 @@
 <template>
-  <div class="root_container" :style="{ height: pageHeight + 'px'}">
+  <div class="root_container" :style="{ 'height': pageHeight + 'px'}">
     <Row class="user_info">
       <Col span="6">
         <Card shadow>
