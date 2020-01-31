@@ -19,11 +19,11 @@
             <TabPane label="信息维护">
               <user-info />
             </TabPane>
-            <TabPane label="登录记录">
-              <login-log />
-            </TabPane>
             <TabPane label="密码修改">
               <modify-pwd />
+            </TabPane>
+            <TabPane label="登录记录">
+              <login-log />
             </TabPane>
           </Tabs>
         </Card>
