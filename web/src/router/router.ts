@@ -21,7 +21,7 @@ declare global {
 import Redirect from '@/layout/redirect/index.vue'
 import Login from '@/views/login/index.vue'
 import Layout from '@/layout/index.vue';
-import Home from '@/views/home.vue'
+import Home from '@/views/Home.vue'
 
 import MenuList from '@/views/sys/menu/list.vue';
 import RoleList from '@/views/sys/role/list.vue';
