@@ -1,5 +1,5 @@
 <template>
-  <div class="root_container" :style="{ height: pageHeight + 'px'}">首页</div>
+  <div class="root_container" style="height:100%">首页</div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
