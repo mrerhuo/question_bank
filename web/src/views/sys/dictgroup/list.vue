@@ -14,9 +14,18 @@
           placeholder="分组名称"
           style="width: 150px"
         />
-        <Input class="search_item" v-model="query.status" placeholder="状态" style="width: 150px" />
-        <Button class="search_item" @click="getPage()"><i class="iconfont icon-xiaodaiapp03"></i> 查询</Button>
-        <Button class="search_item" type="primary" @click="addInfo()"><i class="iconfont icon-xinzeng1"></i> 新增</Button>
+        <Input
+          class="search_item"
+          v-model="query.status"
+          placeholder="状态"
+          style="width: 150px"
+        />
+        <Button class="search_item" @click="getPage()"
+          ><i class="iconfont icon-xiaodaiapp03"></i> 查询</Button
+        >
+        <Button class="search_item" type="primary" @click="addInfo()"
+          ><i class="iconfont icon-xinzeng1"></i> 新增</Button
+        >
       </Col>
     </Row>
     <Row>
@@ -31,21 +40,34 @@
         >
           <template slot-scope="{ row, index }" slot="action">
             <Tooltip content="详细信息" placement="top">
-              <Button size="small" style="margin-right: 5px" @click="showInfo(row.groupId)">
+              <Button
+                size="small"
+                style="margin-right: 5px"
+                @click="showInfo(row.groupId)"
+              >
                 <i class="iconfont icon-xiangxiguihua table_btn_info"></i>
               </Button>
             </Tooltip>
             <Tooltip content="编辑" placement="top">
-              <Button size="small" style="margin-right: 5px" @click="editInfo(row.groupId)">
-              <i class="iconfont icon-editgroups table_btn_edit"></i>
+              <Button
+                size="small"
+                style="margin-right: 5px"
+                @click="editInfo(row.groupId)"
+              >
+                <i class="iconfont icon-editgroups table_btn_edit"></i>
               </Button>
             </Tooltip>
             <Tooltip content="删除" placement="top">
-            <Poptip confirm title="是否确认删除？" @on-ok="delteInfo(row.groupId)" placement="left">
-              <Button size="small">
-              <i class="iconfont icon-shanchu table_btn_delete"></i>
-              </Button>
-            </Poptip>
+              <Poptip
+                confirm
+                title="是否确认删除？"
+                @on-ok="delteInfo(row.groupId)"
+                placement="left"
+              >
+                <Button size="small">
+                  <i class="iconfont icon-shanchu table_btn_delete"></i>
+                </Button>
+              </Poptip>
             </Tooltip>
           </template>
         </Table>
@@ -55,7 +77,11 @@
       <Page :total="datas.total" show-elevator show-sizer show-total />
     </div>
     <edit-view v-model="editViewShow" :key-id="keyId" @save-success="getPage" />
-    <detail-view v-model="detailViewShow" :key-id="keyId" @save-success="getPage" />
+    <detail-view
+      v-model="detailViewShow"
+      :key-id="keyId"
+      @save-success="getPage"
+    />
   </div>
 </template>
 <script lang="ts">
@@ -74,7 +100,6 @@ export default class DictGroupPage extends Vue {
     return DictGroup.query;
   }
   async created() {
-    console.log(AppModule.size);
     await this.getPage();
   }
   editViewShow: boolean = false;
@@ -98,7 +123,6 @@ export default class DictGroupPage extends Vue {
   }
   //删除
   async delteInfo(id: number) {
-    console.log(id);
     await DictGroup.deleteModel(id);
   }
   async getPage() {
@@ -106,7 +130,9 @@ export default class DictGroupPage extends Vue {
   }
 
   value1 = "";
-  pageHeight = Vue.prototype.$height - 237; //空白页为：133查询条件一行：237 查询条件2行269
+  get pageHeight() {
+    return AppModule.height - 237;
+  }
   columns = [
     {
       title: "序号",
@@ -143,5 +169,4 @@ export default class DictGroupPage extends Vue {
   ];
 }
 </script>
-<style scoped lang="less">
-</style>
+<style scoped lang="less"></style>
