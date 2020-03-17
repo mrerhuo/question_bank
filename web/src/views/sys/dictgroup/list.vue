@@ -20,11 +20,9 @@
           placeholder="状态"
           style="width: 150px"
         />
-        <Button class="search_item" @click="getPage()"
-          ><i class="iconfont icon-xiaodaiapp03"></i> 查询</Button
-        >
-        <Button class="search_item" type="primary" @click="addInfo()"
-          ><i class="iconfont icon-xinzeng1"></i> 新增</Button
+        <Button class="search_item" @click="getPage()"> 查询</Button>
+        <Button class="search_item" type="primary" @click="addInfo()">
+          新增</Button
         >
       </Col>
     </Row>
@@ -163,7 +161,7 @@ export default class DictGroupPage extends Vue {
     {
       title: "操作",
       slot: "action",
-      width: 220,
+      width: 120,
       align: "center"
     }
   ];

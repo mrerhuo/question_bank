@@ -1,6 +1,16 @@
 <template>
-  <Modal :value="value" :title="modalTitle" @on-visible-change="visibleChange">
-    <Form ref="saveForm" :model="model" :rules="modelValidate" :label-width="80">
+  <Modal
+    :value="value"
+    :title="modalTitle"
+    @on-visible-change="visibleChange"
+    :mask-closable="false"
+  >
+    <Form
+      ref="saveForm"
+      :model="model"
+      :rules="modelValidate"
+      :label-width="80"
+    >
       <FormItem label="编号" prop="groupId">
         <Input v-model="model.groupId" placeholder="Enter your name"></Input>
       </FormItem>
@@ -43,7 +53,7 @@ export default class EditView extends Vue {
       this.cancel();
     } else {
       this.model.groupId = this.keyId;
-      this.model=DictGroup.editModel;
+      this.model = DictGroup.editModel;
     }
   }
   save() {
@@ -64,9 +74,7 @@ export default class EditView extends Vue {
     this.$emit("input", false);
   }
   modelValidate = {
-    groupCode: [
-      { required: true, message: "请输入分组代码", trigger: "blur" }
-    ],
+    groupCode: [{ required: true, message: "请输入分组代码", trigger: "blur" }],
     groupName: [
       {
         required: true,
@@ -78,5 +86,4 @@ export default class EditView extends Vue {
 }
 </script>
 
-<style scoped lang="less">
-</style>
+<style scoped lang="less"></style>
